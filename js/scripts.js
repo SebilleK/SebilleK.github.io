@@ -3,8 +3,12 @@
 //Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-personal/blob/master/LICENSE)
 
 const personalBackToTopBtn = document.getElementById('back-to-top');
+const showCertsBtn = document.getElementById('click-creds');
+const certsSection = document.getElementById('creds-page');
+const closeBtn = document.getElementById('close-button');
+const promptSection = document.getElementById('prompt-section');
 
-// back to top btn functionality
+//? back to top btn functionality
 function buttonStyle() {
 	window.addEventListener('scroll', () => {
 		if (window.scrollY > 450) {
@@ -24,5 +28,23 @@ function backToTop() {
 	});
 }
 
+//? show certs section functionality
+
+function showSection() {
+	showCertsBtn.addEventListener('click', () => {
+		promptSection.classList.add('d-none');
+		certsSection.classList.remove('d-none');
+	});
+}
+
+function hideSection() {
+	closeBtn.addEventListener('click', () => {
+		certsSection.classList.add('d-none');
+		promptSection.classList.remove('d-none');
+	});
+}
+
 buttonStyle();
 backToTop();
+showSection();
+hideSection();
